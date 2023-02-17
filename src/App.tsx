@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Selection } from './components/Selection/selection';
-import { decimalToBase } from './utils/decimalToBase';
-import GithubIcon from './assets/github.svg';
-import InstagramIcon from './assets/instagram.svg';
+import { decimalToBase } from './utils/convertions/decimalToBase';
+import { basesToDecimal } from './utils/convertions/basesToDecimal';
 
 import './styles/author.css'
 import './App.css'
 import { GitHubLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
+import { isBase } from './utils/isBase';
 
 type convertionProps = {
   result: string | number;
@@ -23,12 +23,15 @@ function App() {
   const [convertion, setConvertion] = useState<convertionProps>({ result: '', resolution: '' });
 
   const handleConvert = () => {
-    if (!value) return;
+    if (!value || initialBase === finalBase || !isBase(value, initialBase)) return;
     let response = {} as convertionProps;
     switch (initialBase) {
       case 'Decimal':
         response = decimalToBase(value, finalBase);
         break;
+      default:
+        response = basesToDecimal(value, initialBase);
+        break
     }
 
     setConvertion(response);
@@ -59,7 +62,7 @@ function App() {
             <input
               value={value}
               onChange={e => setValue(e.target.value)}
-              type={initialBase === 'Decimal' ? 'number' : 'text'}
+              type="text"
               placeholder="Valor a converter"
             />
             <button onClick={handleConvert}>Converter</button>
@@ -68,7 +71,7 @@ function App() {
 
         <pre>
           <h3>RESOLUÇÃO</h3>
-          <p>{convertion.resolution}</p>
+          <p dangerouslySetInnerHTML={{ __html: convertion.resolution }} />
           <div><span>RESULTADO:</span> {convertion.result}</div>
         </pre>
       </main>

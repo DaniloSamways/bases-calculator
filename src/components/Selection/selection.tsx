@@ -15,7 +15,7 @@ export function Selection({ base, otherBase, setBase }: SelectionProps) {
   const bases = ['Decimal', 'Binário', 'Octal', 'Hexadecimal'];
 
   const handleSetBase = (base: string) => {
-    if (base !== otherBase) setBase(base as 'Decimal' | 'Binário' | 'Octal' | 'Hexadecimal');
+    setBase(base as 'Decimal' | 'Binário' | 'Octal' | 'Hexadecimal');
   }
 
   return (
@@ -33,12 +33,13 @@ export function Selection({ base, otherBase, setBase }: SelectionProps) {
             <Select.Group>
               {bases.map((base) => (
                 <>
-                  {(otherBase !== 'Decimal' && base !== 'Decimal') || (otherBase === base)
+                  {(base !== 'Decimal' && otherBase !== "Decimal")
                     ? (
                       <SelectItem key={base} value={base} disabled>
                         {base}
                       </SelectItem>
-                    ) : (
+                    )
+                    : (
                       <SelectItem key={base} value={base}>
                         {base}
                       </SelectItem>
