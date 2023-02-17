@@ -33,7 +33,7 @@ export function Selection({ base, otherBase, setBase }: SelectionProps) {
             <Select.Group>
               {bases.map((base) => (
                 <>
-                  {otherBase !== 'Decimal' && base !== 'Decimal'
+                  {(otherBase !== 'Decimal' && base !== 'Decimal') || (otherBase === base)
                     ? (
                       <SelectItem key={base} value={base} disabled>
                         {base}
