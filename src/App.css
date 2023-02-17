@@ -59,6 +59,10 @@ input::placeholder {
   color: #5c5c5c;
 }
 
+input:focus, button:focus {
+  border: 2px solid rgb(11, 172, 11);
+}
+
 input:hover {
   filter: brightness(80%);
 }

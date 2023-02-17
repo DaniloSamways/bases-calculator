@@ -1,6 +1,6 @@
 footer {
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 15px;
   right: 15px;
   gap: 15px;
