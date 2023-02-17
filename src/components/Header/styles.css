@@ -1,0 +1,16 @@
+header {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+header p {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+header span {
+  color: rgb(11, 172, 11);
+  font-size: 2rem;
+}

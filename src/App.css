@@ -1,0 +1,117 @@
+body {
+  background-color: #161618;
+  color: rgb(202, 202, 202);
+  font-family: 'Inter', sans-serif;
+}
+
+main {
+  text-align: center;
+  margin: 4rem auto;
+  width: 90%;
+  max-width: 500px;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.divider {
+  color: rgb(77, 77, 77);
+  font-weight: bold;
+}
+
+.selections {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.insertion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.insertion input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 2px solid #262627;
+  border-radius: 0.3rem;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  color: white;
+}
+
+input::placeholder {
+  color: #5c5c5c;
+}
+
+input:hover {
+  filter: brightness(80%);
+}
+
+.insertion button {
+  border: 2px solid #262627;
+  background: #262627;
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.123);
+}
+
+button:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+pre {
+  background: rgb(29, 29, 29);
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid rgb(44, 44, 44);
+  padding: 0.8rem;
+  padding-bottom: 2.5rem;
+  text-align: start;
+  margin-top: 2rem;
+  min-height: 200px;
+  font-family: 'Inter', sans-serif;
+}
+
+pre p {
+  line-height: 24px;
+}
+
+pre h3 {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+pre div {
+  position: absolute;
+  bottom: 0;
+  background: rgb(44, 44, 44);
+  border-radius: 4px;
+  padding: 0.4rem;
+  color: rgb(184, 184, 184);
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+pre div span {
+  font-weight: bold;
+}
