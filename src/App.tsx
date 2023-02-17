@@ -59,7 +59,7 @@ function App() {
             <input
               value={value}
               onChange={e => setValue(e.target.value)}
-              type="text"
+              type={initialBase === 'Decimal' ? 'number' : 'text'}
               placeholder="Valor a converter"
             />
             <button onClick={handleConvert}>Converter</button>

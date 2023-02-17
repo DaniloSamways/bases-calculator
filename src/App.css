@@ -59,12 +59,17 @@ input::placeholder {
   color: #5c5c5c;
 }
 
-input:focus, button:focus {
+input:focus,
+button:focus {
   border: 2px solid rgb(23, 105, 23);
 }
 
 input:hover {
   filter: brightness(80%);
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .insertion button {
