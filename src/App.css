@@ -85,12 +85,14 @@ pre {
   padding-bottom: 2.5rem;
   text-align: start;
   margin-top: 2rem;
-  min-height: 200px;
   font-family: 'Inter', sans-serif;
 }
 
 pre p {
   line-height: 24px;
+  overflow: scroll;
+  min-height: 180px;
+  max-height: 60vw;
 }
 
 pre h3 {
@@ -115,3 +117,14 @@ pre div {
 pre div span {
   font-weight: bold;
 }
+
+@media screen and (max-width: 570px) {
+  form {
+    width: 70vw;
+  }
+} 
+@media screen and (max-width: 450px) {
+  form {
+    width: 100%;
+  }
+} 
