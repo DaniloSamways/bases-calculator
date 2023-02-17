@@ -104,7 +104,7 @@ export function decimalToBase(value: string | number, base: string) {
   }
 
   steps.push(`
-    Dividir o número ${value} pela base ${base} (${baseValue}) até que o quociente seja 0: ${formulaStepsArray.join('\n')}
+    Dividir o número ${value} pela base ${base} (${baseValue}) até que o quociente seja 0:\n${formulaStepsArray.join('\n')}
   `)
 
   result = result.slice(1);
