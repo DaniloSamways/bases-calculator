@@ -15,9 +15,46 @@ function returnFormula(valuesArray: string[], baseValue: number): string {
 }
 
 export function basesToDecimal(value: number | string, base: string) {
+  if (value.toString() === "0") {
+    switch (base) {
+      case 'Hexadecimal':
+        return {
+          resolution: `1º Passo:
+          Números de 0 a 9 não mudam: ${value}\n
+          `,
+          result: value,
+        }
+      case 'Octal':
+        return {
+          resolution: `1º Passo:
+          Números de 0 a 7 não mudam: ${value}\n
+          `,
+          result: value,
+        }
+      case 'Binário':
+        return {
+          resolution: `1º Passo:
+          Números de 0 a 1 não mudam: ${value}\n
+          `,
+          result: value,
+        }
+    }
+  }
+
+
   if (value.toString().length === 1 && base === 'Hexadecimal') {
     const letter = value;
     value = parseInt(convertToHexa(value.toString()))
+
+    if (value < 10) {
+      return {
+        resolution: `1º Passo:
+          Números de 0 a 9 não mudam: ${value}\n
+      `,
+        result: value,
+      }
+    }
+
     return {
       resolution: `1º Passo:
         Números de 10 a 15 são trocados por letras:
@@ -28,7 +65,7 @@ export function basesToDecimal(value: number | string, base: string) {
         14 = E
         15 = F\n\n2º Passo:
         Substitua a letra pelo seu valor correspondente:
-        ${letter} = ${convertToHexa(value.toString())}
+        ${letter.toString().toUpperCase()} = ${convertToHexa(value.toString())}
     `,
       result: value,
     }
@@ -87,11 +124,20 @@ export function basesToDecimal(value: number | string, base: string) {
 
     formulaStepsArray.push(localResult.toString())
   }
-  steps.push(`
+
+  if (formulaStepsArray.length > 1) {
+    steps.push(`
     Somar todos os valores:
     N = ${formulaStepsArray.join('   +   ')}
     N = ${result}
-  `)
+    `)
+  } else {
+    steps.push(`
+    Resolva o cálculo e obtenha o resultado:
+    N = ${result}
+    `)
+  }
+
 
   var resolution = ``
 

@@ -20,8 +20,34 @@ function toHexadecimal(value: number) {
 }
 
 export function decimalToBase(value: string | number, base: string) {
+  if (value.toString() === "0") {
+    switch (base) {
+      case 'Hexadecimal':
+        return {
+          resolution: `1º Passo:
+          Números de 0 a 9 não mudam: ${value}\n
+          `,
+          result: value,
+        }
+      case 'Octal':
+        return {
+          resolution: `1º Passo:
+          Números de 0 a 7 não mudam: ${value}\n
+          `,
+          result: value,
+        }
+      case 'Binário':
+        return {
+          resolution: `1º Passo:
+          Números de 0 a 1 não mudam: ${value}\n
+          `,
+          result: value,
+        }
+    }
+  }
+
   if (base === 'Hexadecimal') {
-    if(hexaValues[value]) {
+    if (hexaValues[value]) {
       return {
         result: hexaValues[value],
         resolution: `1º Passo:
@@ -33,7 +59,7 @@ export function decimalToBase(value: string | number, base: string) {
           14 = E
           15 = F\n\n2º Passo:
           Substitua o valor pelo seu valor correspondente:
-          ${value} = ${hexaValues[value]}
+          ${value} = ${hexaValues[value].toUpperCase()}
       `,
       }
     }

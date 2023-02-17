@@ -23,7 +23,7 @@ function App() {
   const [convertion, setConvertion] = useState<convertionProps>({ result: '', resolution: '' });
 
   const handleConvert = () => {
-    if (!value || initialBase === finalBase || !isBase(value, initialBase)) return;
+    if (!value || initialBase === finalBase || !isBase(value, initialBase) || value < 0) return;
     let response = {} as convertionProps;
     switch (initialBase) {
       case 'Decimal':
