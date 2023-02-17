@@ -130,25 +130,14 @@ pre div span {
   }
 }
 
-/* ===== Scrollbar CSS ===== */
-/* Firefox */
-* {
-  scrollbar-width: none;
-  scrollbar-color: #404040 #1d1d1d;
-}
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+  background: rgb(29, 29, 29);
 
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #1d1d1d;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #404040;
   border-radius: 10px;
-  border: 0px none #1d1d1d;
 }
