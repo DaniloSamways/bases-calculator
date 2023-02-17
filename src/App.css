@@ -112,6 +112,9 @@ pre div {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 0.5rem;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 pre div span {
@@ -140,4 +143,8 @@ pre div span {
 *::-webkit-scrollbar-thumb {
   background-color: #404040;
   border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgb(29, 29, 29);
 }
