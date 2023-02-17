@@ -1,5 +1,5 @@
 body {
-  background-color: #161618;
+  background-color: rgb(22, 22, 24);
   color: rgb(202, 202, 202);
   font-family: 'Inter', sans-serif;
 }
@@ -92,7 +92,7 @@ pre p {
   line-height: 24px;
   overflow: scroll;
   min-height: 180px;
-  max-height: 60vw;
+  max-height: 400px;
 }
 
 pre h3 {
@@ -133,21 +133,22 @@ pre div span {
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
-  scrollbar-width: auto;
-  scrollbar-color: #1f1e1e #ffffff;
+  scrollbar-width: none;
+  scrollbar-color: #404040 #1d1d1d;
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
+  height: 7px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #1d1d1d;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #1f1e1e;
+  background-color: #404040;
   border-radius: 10px;
-  border: 3px solid #ffffff;
+  border: 0px none #1d1d1d;
 }
